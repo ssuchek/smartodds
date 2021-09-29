@@ -90,11 +90,11 @@ Required fields are ATP (integer) and Year (integer). Other fields are optional:
 1. String fields: Winner, Loser, Comment, Court, Location, Tournament, Series, Surface.
 2. Intefer fields: ATP, Year, W1, W2, W3, W4, W5, L1, L2, L3, L4, L5, WRank, LRank, Wsets, Lsets, Best of, LPts, WPts
 3. Float fields: AvgL, AvgW, B365L, B365W, EXL, EXW, LBL, LBW, MaxL, MaxW, PSL, PSW, SJL, SJW
-4. Date fields: Date (%Y-%M-%d)\
+4. Date fields: Date (%Y-%M-%d)
 
 ### Get data from database
 
-To get data from database, one can use UI link
+To get data from database use link
 
 `http://<hostname>/api/get/data/<year>`
 
@@ -121,7 +121,13 @@ which will download the file `<year>.json`.
 
 Filters, search and pagination is applied in the same way as described in [section **Get data from database**](#get-data-from-database).
 
+### Delete data from database
 
+To delete data from database use link
+
+`http://<hostname>/api/delete/data`
+
+Filters or search are **required** to identify the data to be deleted and specified in the same way as described in [section **Get data from database**](#get-data-from-database).
 
 
 
