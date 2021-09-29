@@ -42,7 +42,7 @@ The main keys are:
 
 ## Quickstart
 
-### Install required dependencies
+### Install dependencies
 
 `python -m pip install requirements.txt`
 
@@ -129,7 +129,39 @@ To delete data from database use link
 
 Filters or search are **required** to identify the data to be deleted and specified in the same way as described in [section **Get data from database**](#get-data-from-database).
 
+### Continouos integration
 
+Use Github Actions and create yml file in `.github/workflows`. Trigger CI pipeline on every push action, build, install all dependencies and perform a test run. 
 
+```
+    name: CI for smartodds application
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Test run
+      run: |
+        python api.py
+```
+
+### Unit testing and TDD
+
+To be defined...
 
 
