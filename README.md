@@ -65,7 +65,7 @@ To import data in the database, one can use:
 ```
 import requests
 
-url = 'http://127.0.0.1:5000/api/get/import/2012'
+url = 'http://127.0.0.1:5000/api/import/data/2012'
 
 r = requests.post(url)
 ```
