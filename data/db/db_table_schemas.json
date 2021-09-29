@@ -1,0 +1,27 @@
+{
+  "tournaments_common": [
+    "ATP INT", "Year INT", "Date DATETIME",
+    "Tournament NVARCHAR(255)", "Location NVARCHAR(255)",
+    "Series NVARCHAR(16)", "Court VARCHAR(16)", "Surface VARCHAR(16)",
+    "PRIMARY KEY (ATP, Year)"
+  ],
+  "tournaments_results": [
+    "ATP INT", "Year INT", "Date DATETIME", "Winner NVARCHAR(255)", "Loser NVARCHAR(255)",
+    "Round VARCHAR(64)", "BestOf SMALLINT",
+    "WRank INT", "LRank INT", "WPts INT", "LPts INT", 
+    "W1 SMALLINT", "L1 SMALLINT", "W2 SMALLINT", "L2 SMALLINT", 
+    "W3 SMALLINT", "L3 SMALLINT", "W4 SMALLINT", "L4 SMALLINT", "W5 SMALLINT", "L5 SMALLINT",
+    "Wsets SMALLINT", "Lsets SMALLINT", 
+    "Comment VARCHAR(64)",
+    "PRIMARY KEY (ATP, Year, Winner, Loser)",
+    "FOREIGN KEY (ATP, Year) REFERENCES {tournaments}(ATP, Year) ON DELETE CASCADE"
+  ],
+  "tournaments_bets": [
+    "ATP INT", "Year INT", "Date DATETIME", "Winner NVARCHAR(255)", "Loser NVARCHAR(255)",
+    "B365W DECIMAL(4,2)", "B365L DECIMAL(4,2)", "EXW DECIMAL(4,2)", "EXL DECIMAL(4,2)", "LBW DECIMAL(4,2)", "LBL DECIMAL(4,2)",
+    "PSW DECIMAL(4,2)", "PSL DECIMAL(4,2)", "SJW DECIMAL(4,2)", "SJL DECIMAL(4,2)",
+    "MaxW DECIMAL(4,2)", "MaxL DECIMAL(4,2)", "AvgW DECIMAL(4,2)", "AvgL DECIMAL(4,2)",
+    "PRIMARY KEY (ATP, Year, Winner, Loser)",
+    "FOREIGN KEY (ATP, Year) REFERENCES {tournaments}(ATP, Year) ON DELETE CASCADE"
+  ]
+}
