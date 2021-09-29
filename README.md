@@ -61,11 +61,14 @@ Yearly data is available in the form of ZIP files at
 To import data in the database, one can use:
 1. Simple UI link: `http://<hostname>/api/import/data/<year>`
 2. POST request to `http://<hostname>/api/import/data/<year>`. E.g., for application run on the localhost, a Python request to import data for 2012 would look as follows:
-`import requests
+3. 
+```
+import requests
 
 url = 'http://127.0.0.1:5000/api/get/import/2012'
 
-r = requests.post(url)`
+r = requests.post(url)
+```
 
 ### Upload data in database
 
@@ -92,11 +95,13 @@ Required fields are ATP (integer) and Year (integer). Other fields are optional:
 ### Get data from database
 
 To get data from database, one can use UI link
+
 `http://<hostname>/api/get/data/<year>`
 
 Link supports additional filters, global search and pagination. 
 
 E.g., link to get all data for year 2014 with *ATP=2* that contains phrase *Hard* looks as follows:
+
 `http://<hostname>/api/get/data/2014?ATP=2&search=Hard`
 
 Valid filters include: *ATP, Date, Tournament, Location, Series, Court, Surface, Winner, Loser, Round, BestOf, WRank, LRank, WPts, LPts,  W1, L1, W2, L2,  W3, L3, W4, L4, W5, L5, Wsets, Lsets,  Comment, B365W, B365L, EXW, EXL,  LBW, LBL, PSW, PSL,  SJW, SJL, MaxW, MaxL, AvgW, AvgL*
@@ -109,6 +114,7 @@ If one wants to display a certain page, use page parameter:
 ### Download data from database
 
 To download data from database, one can use UI link
+
 `http://<hostname>/api/get/data/<year>/download`
 
 which will download the file `<year>.json`.
