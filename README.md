@@ -71,7 +71,8 @@ r = requests.post(url)`
 
 To manually load data in the database, one can use post request with JSON body:
 
-`import requests
+```
+import requests
 
 url = 'http://127.0.0.1:5000/api/upload/data'
 
@@ -79,7 +80,8 @@ data = {
     "ATP":122,"AvgL":"2.5","AvgW":"1.51","B365L":"2.62","B365W":"1.44","Best of":3,"Comment":"Completed","Court":"Outdoor","Date":"2022-05-04","EXL":"2.5","EXW":"1.5","L1":4,"L2":2,"L3":0,"L4":0,"L5":0,"LBL":"2.25","LBW":"1.57","LPts":1215,"LRank":28,"Location":"Brisbane","Loser":"Mayer F.","Lsets":0,"MaxL":"3.2","MaxW":"1.57","PSL":"2.73","PSW":"1.52","Round":"2nd Round","SJL":"2.38","SJW":"1.53","Series":"ATP250","Surface":"Hard","Tournament":"Brisbane International","W1":6,"W2":6,"W3":0,"W4":0,"W5":0,"WPts":1070,"WRank":36,"Winner":"Pffeifer M.","Wsets":2,"Year":2022
 }
 
-r = requests.post(url, json=data)`
+r = requests.post(url, json=data)
+```
 
 Required fields are ATP (integer) and Year (integer). Other fields are optional:
 1. String fields: Winner, Loser, Comment, Court, Location, Tournament, Series, Surface.
@@ -111,7 +113,7 @@ To download data from database, one can use UI link
 
 which will download the file `<year>.json`.
 
-Filters, search and pagination is applied in the same way as described (#get-data-from-database).
+Filters, search and pagination is applied in the same way as described in [section **Get data from database**](#get-data-from-database).
 
 
 
